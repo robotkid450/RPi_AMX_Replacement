@@ -1,2 +1,2 @@
-# RPi_AMX_Replacement
-A simple replacment for and amx unit, based on a raspberry pi.
+# RPi AMX Replacement
+A simple replacment for an amx unit, based on a raspberry pi.
