@@ -16,7 +16,7 @@ class multiplexer():
 
     def sendCommand(self, output, command):
         GPIO.output(output, True)
-        subprocess.call(command, shell=True, check=True)
+        subprocess.call(command, shell=True)
         GPIO.output(output, False)
 
 
