@@ -1,17 +1,26 @@
 #! /usr/bin/env python3
 
 import RPi.GPIO as GPIO
+import subprocess
 
-driverPin = 11
-multiplexPins = [12, 13, 15, 16, 18, 22, 29]
+class multiplexer():
 
-def setup():
-    GPIO.setmode(GPIO.BOARD) # set hardware pin numbering
+    def __init__(self):
+        self.multiplexPins = [12, 13, 15, 16, 18, 22, 29]
+        self.setup()
 
-    GPIO.setup(driverPin, GPIO.OUT, False)# set lirc driver pin
+    def setup(self):
+        GPIO.setmode(GPIO.BOARD) # set hardware pin numbering
 
-    for item in multiplexPins:
-        GPIO.setup(item, GPIO.OUT, False)
+
+        GPIO.setup(self.multiplexPins, GPIO.OUT)
+
+
+    def sendcommand(self, output, command):
+        GPIO.output(output, True)
+        pass # placeholder for ir send command
+        GPIO.output(output, False)
+
 
 
 
@@ -19,4 +28,5 @@ def main():
     pass
 
 if __name__ == '__main__':
+    mult = multiplexer()
     main()
