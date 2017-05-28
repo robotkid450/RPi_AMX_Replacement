@@ -11,15 +11,14 @@ class multiplexer():
 
     def setup(self):
         GPIO.setmode(GPIO.BOARD) # set hardware pin numbering
-
-
         GPIO.setup(self.multiplexPins, GPIO.OUT)
 
 
-    def sendcommand(self, output, command):
+    def sendCommand(self, output, command):
         GPIO.output(output, True)
-        pass # placeholder for ir send command
+        subprocess.run(command, shell=True, check=True)
         GPIO.output(output, False)
+
 
 
 
